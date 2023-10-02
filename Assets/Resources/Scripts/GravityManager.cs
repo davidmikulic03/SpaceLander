@@ -7,6 +7,7 @@ public class GravityManager : MonoBehaviour
 {
     public float gravConst;
     GameObject[] allBodies;
+    public GameObject closestBody;
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class GravityManager : MonoBehaviour
     void FixedUpdate()
     {
         Physics.gravity = gravityVector;
+        closestBody = ClosestPlanet();
     }
 
     public Vector3 gravityVector

@@ -6,30 +6,32 @@ public class PlayerValues : MonoBehaviour
 {
     Rigidbody rigidBody;
 
+    public float fuelBurnRate = 0.1f;
+
     public float maxFuel = 100f;
     public float maxHealth = 100f;
 
-    [HideInInspector] public Vector3 velocity;
-    [HideInInspector] public float speed;
-    [HideInInspector] public float currentFuel;
-    [HideInInspector] public float currentHealth;
+    public Vector3 velocity;
+    public float speed;
+    public float currentFuel;
+    public float currentHealth;
 
-    public void Initialize(float maxFuel, float maxHealth, float currentFuel, float currentHealth)
+    public void Initialize(SceneData sceneData) 
     {
-        this.maxFuel = maxFuel; 
-        this.maxHealth = maxHealth; 
-        this.currentFuel = currentFuel; 
-        this.currentHealth = currentHealth;
+        this.fuelBurnRate = sceneData.fuelBurnRate;
+        this.maxFuel = sceneData.maxFuel;
+        this.maxHealth = sceneData.maxHealth;
+        currentFuel = sceneData.initialFuel;
+        currentHealth = sceneData.initialHealth;
     }
 
-    void Awake()
+    public PlayerValues(Rigidbody rigidBody, float fuelBurnRate, float maxFuel, float maxHealth, float initialFuel, float initialHealth)
     {
-        rigidBody = GetComponent<Rigidbody>();
-    }
-
-    void LateUpdate()
-    {
-        velocity = rigidBody.velocity;
-        speed = velocity.magnitude;
+        this.rigidBody = rigidBody;
+        this.fuelBurnRate = fuelBurnRate;
+        this.maxFuel = maxFuel;
+        this.maxHealth = maxHealth;
+        this.currentFuel = initialFuel;
+        this.currentHealth = initialHealth;
     }
 }

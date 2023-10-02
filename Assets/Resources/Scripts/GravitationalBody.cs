@@ -5,9 +5,4 @@ using UnityEngine;
 public class GravitationalBody : MonoBehaviour
 {
     public float mass;
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
 }

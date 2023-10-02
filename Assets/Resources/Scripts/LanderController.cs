@@ -6,12 +6,11 @@ using UnityEngine.InputSystem;
 public class LanderController : MonoBehaviour
 {
     private GameManager gameManager;
-
     private Rigidbody rigidBody;
     [SerializeField] private GameObject cameraObject;
     [Header("Reaction Control System (Rotation)")]
-
     [SerializeField] private float puffStrength;
+    [Header("Rocket Engine (Forward Thrust)")]
     [SerializeField] private float thrustStrength;
 
     private Vector3 rotationInput;
@@ -22,11 +21,14 @@ public class LanderController : MonoBehaviour
     [SerializeField] private bool stabilization;
 
     private GravityManager gravityManager;
+    private PlayerValues playerValues;
+    
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
         gravityManager = GetComponent<GravityManager>();
+        playerValues = GetComponent<PlayerValues>();
     }
 
     public void Initialize(GameManager gameManager)
@@ -47,11 +49,20 @@ public class LanderController : MonoBehaviour
 
     void ApplyThrust()
     {
-        rigidBody.velocity +=
+        float engineEfficiency = playerValues.fuelBurnRate;
+        float currentFuel = playerValues.currentFuel;
+
+        if(currentFuel > 0)
+        {
+            playerValues.currentFuel -= thrustInput * engineEfficiency * Time.deltaTime;
+
+            rigidBody.velocity +=
                 transform.up *
                 thrustStrength *
                 thrustInput *
                 Time.deltaTime;
+        }
+        else playerValues.currentFuel = 0;
     }
 
     void Movement()
@@ -102,7 +113,7 @@ public class LanderController : MonoBehaviour
     
     public void GetUpVector()
     {
-        GameObject closestPlanet = gravityManager.ClosestPlanet();
+        GameObject closestPlanet = gravityManager.closestBody;
         Vector3 closestPlanetDistance = closestPlanet.transform.position;
         upVector = -(closestPlanetDistance - transform.position).normalized;
     }

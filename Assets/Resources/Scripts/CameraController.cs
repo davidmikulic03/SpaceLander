@@ -77,7 +77,7 @@ public class CameraController : MonoBehaviour
     bool isSwitching;
     private Quaternion RotateView()
     {
-        GameObject closestPlanet = gravityManager.ClosestPlanet();
+        GameObject closestPlanet = gravityManager.closestBody;
 
         upVector = landerController.upVector;
         rightVector = Vector3.Cross(upVector, -transform.forward).normalized;
@@ -136,11 +136,11 @@ public class CameraController : MonoBehaviour
 
     void OnLook(InputValue value)
     {
-        mouseDelta = value.Get<Vector2>() / Time.timeScale;
+        mouseDelta = value.Get<Vector2>();
     }
     void OnScroll(InputValue value)
     {
-        scrollDelta = -value.Get<float>() / Time.timeScale;
+        scrollDelta = -value.Get<float>();
     }
     void OnClick(InputValue value)
     {

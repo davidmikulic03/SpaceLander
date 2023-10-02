@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     GameObject playerResource;
     GameObject player;
 
+    private SceneData sceneData;
+
     private void Awake()
     {
         Initialize();
@@ -16,13 +18,14 @@ public class GameManager : MonoBehaviour
 
     private void Initialize()
     {
-        LoadResources();
+        Load();
         SpawnObjects();
     }
 
-    void LoadResources()
+    void Load()
     {
         playerResource = Resources.Load<GameObject>("Player");
+        sceneData = GetComponent<SceneData>();
     }
 
     void SpawnObjects()
@@ -35,6 +38,11 @@ public class GameManager : MonoBehaviour
         player = Instantiate(playerResource);
         player.transform.position = spawnPoint.position;
         player.transform.rotation = spawnPoint.rotation;
-        player.GetComponent<PlayerParent>().Initialize(this);
+
+        PlayerParent playerParent = player.GetComponent<PlayerParent>();
+        playerParent.Initialize(this);
+
+        PlayerValues playerValues = playerParent.playerValues;
+        playerValues.Initialize(sceneData);
     }
 }
