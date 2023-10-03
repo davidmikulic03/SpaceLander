@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43844254ced01645ab13a7814c383e3, type: 3}
+  m_Name: LevelData
+  m_EditorClassIdentifier: 
+  sceneData:
+  - sceneName: Sandbox
+    fuelBurnRate: 0
+    maxFuel: 100
+    maxHealth: 100
+    initialFuel: 100
+    initialHealth: 100
+    description: 'This is the first, and easiest level. Well... It''s less of a level
+      and more of a sandbox to familiarize yourself with the controls. The engine
+      is infinitely efficient here, so you don''t have to worry about your fuel.
+      Have fun, and don''t forget to reset if you accidentally slingshot yourself
+      out of the system (happens easily if you''re not careful).
+
+'
+  - sceneName: Sandbox
+    fuelBurnRate: 0
+    maxFuel: 100
+    maxHealth: 100
+    initialFuel: 100
+    initialHealth: 100
+    description: 
