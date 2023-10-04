@@ -12,7 +12,7 @@ public class PlanetController : MonoBehaviour
 
         float speed = rb.velocity.magnitude;
 
-        if (speed > 5)
+        if (speed > 10)
         {
             Debug.Log("Ouch!");
             //StartCoroutine(HitFrames());

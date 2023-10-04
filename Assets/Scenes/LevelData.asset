@@ -14,22 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneData:
   - sceneName: Sandbox
-    fuelBurnRate: 0
-    maxFuel: 100
-    maxHealth: 100
-    initialFuel: 100
-    initialHealth: 100
-    description: 'This is the first, and easiest level. Well... It''s less of a level
-      and more of a sandbox to familiarize yourself with the controls. The engine
-      is infinitely efficient here, so you don''t have to worry about your fuel.
-      Have fun, and don''t forget to reset if you accidentally slingshot yourself
-      out of the system (happens easily if you''re not careful).
+    description: 'This is the first, and also easiest, level. Well... It''s less
+      of a level and more of a sandbox to familiarize yourself with the controls.
+      The engine is infinitely efficient here, so you don''t have to worry about
+      your fuel. Have fun, and don''t forget to reset if you accidentally slingshot
+      yourself out of the system (happens easily if you''re not careful).
 
 '
-  - sceneName: Sandbox
-    fuelBurnRate: 0
-    maxFuel: 100
-    maxHealth: 100
-    initialFuel: 100
-    initialHealth: 100
-    description: 

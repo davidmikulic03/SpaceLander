@@ -18,6 +18,13 @@ public class LevelSelect : MonoBehaviour
         selectedLevel = levelData.sceneData[levelIndex];
     }
 
+    public void Deselect()
+    {
+        titleText.text = "";
+        descriptionText.text = "";
+        selectedLevel = SceneData.None;
+    }
+
     public void PlayLevel()
     {
         selectedLevel.Load();

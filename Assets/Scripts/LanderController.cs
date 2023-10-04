@@ -8,10 +8,8 @@ public class LanderController : MonoBehaviour
     private GameManager gameManager;
     private Rigidbody rigidBody;
     [SerializeField] private GameObject cameraObject;
-    [Header("Reaction Control System (Rotation)")]
-    [SerializeField] private float puffStrength;
-    [Header("Rocket Engine (Forward Thrust)")]
-    [SerializeField] private float thrustStrength;
+    private float rotationStrength;
+    private float thrustStrength;
 
     [HideInInspector] public bool isThrusting;
     public Vector3 rotationInput;
@@ -32,9 +30,13 @@ public class LanderController : MonoBehaviour
         playerValues = GetComponent<PlayerValues>();
     }
 
-    public void Initialize(GameManager gameManager)
+    public void Initialize(GameManager gameManager, SceneSettings sceneSettings)
     {
         this.gameManager = gameManager;
+
+        rotationStrength = sceneSettings.rotationStrength;
+        thrustStrength = sceneSettings.thrustStrength;
+        stabilization = sceneSettings.stabilization;
     }
 
     void Update()
@@ -102,7 +104,7 @@ public class LanderController : MonoBehaviour
                 Vector3 upAxle = transform.up;
                 globalImpulse += upAxle * rotationInput.z;
                 
-                globalImpulse *= puffStrength * 
+                globalImpulse *= rotationStrength * 
                     Time.deltaTime;
 
                 return globalImpulse;
@@ -110,18 +112,13 @@ public class LanderController : MonoBehaviour
             else if (stabilization)
             {
                 Vector3 rbAngularVelocity = rigidBody.angularVelocity;
-                Vector3 output = -rbAngularVelocity.normalized * puffStrength * Time.deltaTime;
+                Vector3 output = -rbAngularVelocity.normalized * rotationStrength * Time.deltaTime;
                 if (Mathf.Abs(output.magnitude) > Mathf.Abs(rbAngularVelocity.magnitude))
                     output = -rbAngularVelocity;
                 return output;
             }
             return Vector3.zero;
         }
-    }
-
-    public void Damage(float speed)
-    {
-
     }
 
     public void Refuel(float amount)

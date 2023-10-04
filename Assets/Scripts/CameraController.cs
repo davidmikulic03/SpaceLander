@@ -22,9 +22,9 @@ public class CameraController : MonoBehaviour
     private float scrollDelta;
     private bool rightMouseHeld;
 
-
     private GravityManager gravityManager;
     private LanderController landerController;
+    private GameManager gameManager;
 
     private void Awake()
     {
@@ -32,11 +32,18 @@ public class CameraController : MonoBehaviour
         gravityManager = lander.GetComponent<GravityManager>();
         landerController = lander.GetComponent<LanderController>();
     }
-
     
     void Update()
     {
-        ApplyTransforms();
+        if (gameManager.isRunning)
+        {
+            ApplyTransforms();
+        }
+    }
+
+    public void Initialize(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
     }
 
     void ApplyTransforms()

@@ -7,7 +7,6 @@ public class PlayerValues : MonoBehaviour
     Rigidbody rigidBody;
 
     public float fuelBurnRate = 0.1f;
-
     public float maxFuel = 100f;
     public float maxHealth = 100f;
 
@@ -16,13 +15,15 @@ public class PlayerValues : MonoBehaviour
     public float currentFuel;
     public float currentHealth;
 
-    public void Initialize(SceneData sceneData) 
+    public int points;
+
+    public void Initialize(SceneSettings sceneSettings) 
     {
-        this.fuelBurnRate = sceneData.fuelBurnRate;
-        this.maxFuel = sceneData.maxFuel;
-        this.maxHealth = sceneData.maxHealth;
-        currentFuel = sceneData.initialFuel;
-        currentHealth = sceneData.initialHealth;
+        this.fuelBurnRate = sceneSettings.fuelBurnRate;
+        this.maxFuel = sceneSettings.maxFuel;
+        this.maxHealth = sceneSettings.maxHealth;
+        currentFuel = sceneSettings.initialFuel;
+        currentHealth = sceneSettings.initialHealth;
     }
 
     public PlayerValues(Rigidbody rigidBody, float fuelBurnRate, float maxFuel, float maxHealth, float initialFuel, float initialHealth)

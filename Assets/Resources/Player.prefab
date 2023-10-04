@@ -202,7 +202,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -243,8 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lander: {fileID: 1419992238313784753}
   minDistance: 1
-  maxDistance: 40
-  scrollSpeed: 2.5
+  maxDistance: 50
+  scrollSpeed: 3
   lerpSpeed: 5
   panSpeed: 15
 --- !u!114 &2525230865449891064
@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landerObject: {fileID: 1419992238313784753}
+  cameraObject: {fileID: 3861944969781999805}
   playerValues: {fileID: 0}
 --- !u!1 &5535925554395382365
 GameObject:
@@ -686,14 +687,14 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.7764706, g: 0.9523477, b: 1, a: 1}
+  m_Color: {r: 0.4198113, g: 0.87785506, b: 1, a: 1}
   m_Intensity: 0
   m_Range: 20
-  m_SpotAngle: 160
+  m_SpotAngle: 120
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -907,7 +908,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!64 &4675022819531226931
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -943,8 +944,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraObject: {fileID: 3861944969781999805}
-  puffStrength: 10
-  thrustStrength: 25
   isThrusting: 0
   rotationInput: {x: 0, y: 0, z: 0}
   thrustInput: 0
@@ -962,7 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef554e4cccfbde4fb3ece7c61f1a9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravConst: 100
+  gravitationalConstant: {fileID: 11400000, guid: 08e8eedc4518e9d45869adf297a0c1ad, type: 2}
   closestBody: {fileID: 0}
 --- !u!114 &495802038250158142
 MonoBehaviour:
@@ -976,13 +975,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e45c0db6efe164439349d0956fb8531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelBurnRate: 0.1
+  fuelBurnRate: 0
   maxFuel: 100
   maxHealth: 100
   velocity: {x: 0, y: 0, z: 0}
   speed: 0
   currentFuel: 100
   currentHealth: 100
+  points: 0
 --- !u!114 &4919157735915399129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pilotMode: 2
-  landerController: {fileID: 7135490986615027455}
 --- !u!4 &1801162526221737739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7839cb289a3f68b4fb58d5fc5029758a, type: 3}

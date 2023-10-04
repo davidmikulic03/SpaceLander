@@ -11,6 +11,6 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        fuelText.text = playerValues.currentFuel.ToString();
+        fuelText.text = playerValues.currentFuel.ToString() + " / " + playerValues.maxFuel.ToString();
     }
 }

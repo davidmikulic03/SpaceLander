@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class GravitationalBody : MonoBehaviour
 {
-    public float mass;
+    [SerializeField] GravitationalConstant gravitationalConstant;
+    [SerializeField] private float surfaceGravity;
+    [HideInInspector] public float mass;
+
+    private void Awake()
+    {
+        float radius = transform.localScale.x;
+        float squareRadius = radius * radius;
+        mass = surfaceGravity * squareRadius / gravitationalConstant.value;
+    }
 }
