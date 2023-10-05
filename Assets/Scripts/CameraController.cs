@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         landerController = lander.GetComponent<LanderController>();
     }
     
-    void Update()
+    void FixedUpdate()
     {
         if (gameManager.isRunning)
         {

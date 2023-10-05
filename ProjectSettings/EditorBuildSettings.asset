@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: eb43ef08ed7808f45ba6dd08956d2a24
+  - enabled: 1
+    path: Assets/Scenes/Loopie Hoops.unity
+    guid: a4c5f01abe3da4945a0b881f45aae297
   m_configObjects: {}

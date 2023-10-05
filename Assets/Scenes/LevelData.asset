@@ -21,3 +21,8 @@ MonoBehaviour:
       yourself out of the system (happens easily if you''re not careful).
 
 '
+  - sceneName: Loopie Hoops
+    description: "This level acquaints the player with the win condition; getting
+      sweet points. The way you get points is by passing through Hoops\u2122. A hoop
+      is big, red, and rotating. It's hard to miss, really.\n\nThis level has a LOT
+      of hoops. Good luck, Commander."

@@ -10,8 +10,10 @@ public class GravitationalBody : MonoBehaviour
 
     private void Awake()
     {
-        float radius = transform.localScale.x;
+        float radius = transform.localScale.x / 2;
         float squareRadius = radius * radius;
         mass = surfaceGravity * squareRadius / gravitationalConstant.value;
+
+        
     }
 }
