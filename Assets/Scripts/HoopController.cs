@@ -13,7 +13,7 @@ public class HoopController : MonoBehaviour
         if(trigger.gameObject.name == "LanderModel" && isActive)
         {
             PlayerValues playerValues = hitObject.GetComponent<PlayerValues>();
-            playerValues.points += points;
+            playerValues.score += points;
             isActive = false;
             StartCoroutine(KillHoop());
         }

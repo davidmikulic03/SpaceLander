@@ -30,8 +30,10 @@ public class TargetAnim : MonoBehaviour
     
     void Update()
     {
-        if(!isDeath) 
+        if(!isDeath)
+        {
             PassiveRotation();
+        }
     }
 
     float t = 0;
@@ -54,7 +56,7 @@ public class TargetAnim : MonoBehaviour
 
         Vector3 startScale = transform.localScale;
         float scale = startScale.x;
-        float increment = inverseDeathTime * transform.localScale.x * Time.deltaTime * 0.2f;
+        float increment = inverseDeathTime * transform.localScale.x * Time.deltaTime;
 
         while (true)
         {

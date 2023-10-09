@@ -21,8 +21,17 @@ MonoBehaviour:
       yourself out of the system (happens easily if you''re not careful).
 
 '
-  - sceneName: Loopie Hoops
+  - sceneName: Loopy Luke
     description: "This level acquaints the player with the win condition; getting
-      sweet points. The way you get points is by passing through Hoops\u2122. A hoop
-      is big, red, and rotating. It's hard to miss, really.\n\nThis level has a LOT
-      of hoops. Good luck, Commander."
+      sweet points. The way you get points is by passing through Hoops\u2122, big,
+      red, rotating loops. They're hard to miss, really.\n\nAlong with hoops, this
+      level introduces collectible fuel packages. They are, likewise, quite hard
+      to miss. They're green, though."
+  - sceneName: Tumbling Thomas
+    description: "\"What? You can't do your job unless we're supplying you with fuel?
+      Figure it out, bucko.\" \n\nBudget cuts from corporate are hitting hard."
+  - sceneName: Faraway Fortune
+    description: Is it a bird? Is it a plane? No! It's a lovecraftian abomination!
+      Corporate are calling it The Entity. They're currently trying to trademark
+      it, but they need you to get close and see what happens. You could just collect
+      hoops as usual but that weird pulsating mass invites investigation.

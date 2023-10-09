@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Sandbox.unity
     guid: eb43ef08ed7808f45ba6dd08956d2a24
   - enabled: 1
-    path: Assets/Scenes/Loopie Hoops.unity
+    path: Assets/Scenes/Loopy Luke.unity
     guid: a4c5f01abe3da4945a0b881f45aae297
+  - enabled: 1
+    path: Assets/Scenes/Tumbling Thomas.unity
+    guid: a7d22f0008869f74bb273f7c0d1c16a2
+  - enabled: 1
+    path: Assets/Scenes/Faraway Fortune.unity
+    guid: 6c4580f0a8747634a99a921d5989977a
   m_configObjects: {}

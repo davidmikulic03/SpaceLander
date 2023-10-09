@@ -6,6 +6,11 @@ using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     public void QuitGame()
     {
         Application.Quit();

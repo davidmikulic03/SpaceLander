@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.DualShock;
 
 public class GravityManager : MonoBehaviour
 {
-    [SerializeField] GravitationalConstant gravitationalConstant;
+    public GravitationalConstant gravitationalConstant;
     private float gravConst;
     GameObject[] allBodies;
     [HideInInspector] public GameObject closestBody;

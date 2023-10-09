@@ -12,6 +12,11 @@ public class PauseMenu : MonoBehaviour
         this.gameManager = gameManager;
     }
 
+    public void PauseGame()
+    {
+        gameManager.Pause();
+    }
+
     public void ResumeGame()
     {
         gameManager.ResumeGame();

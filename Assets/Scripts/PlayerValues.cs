@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class PlayerValues : MonoBehaviour
 {
+    private GravityManager gravityManager;
     Rigidbody rigidBody;
+    [SerializeField] private float damageMultiplier;
 
-    public float fuelBurnRate = 0.1f;
-    public float maxFuel = 100f;
-    public float maxHealth = 100f;
+    [HideInInspector] public float fuelBurnRate = 0.1f;
+    [HideInInspector] public float maxFuel = 100f;
+    [HideInInspector] public float maxHealth = 100f;
 
-    public Vector3 velocity;
-    public float speed;
     public float currentFuel;
     public float currentHealth;
 
-    public int points;
+    [HideInInspector] public Vector3 velocity;
+    [HideInInspector] public float sqrSpeed;
+    public float speed;
+
+    public int score;
 
     public void Initialize(SceneSettings sceneSettings) 
     {
@@ -24,6 +28,9 @@ public class PlayerValues : MonoBehaviour
         this.maxHealth = sceneSettings.maxHealth;
         currentFuel = sceneSettings.initialFuel;
         currentHealth = sceneSettings.initialHealth;
+
+        rigidBody = GetComponent<Rigidbody>();
+        gravityManager = GetComponent<GravityManager>();
     }
 
     public PlayerValues(Rigidbody rigidBody, float fuelBurnRate, float maxFuel, float maxHealth, float initialFuel, float initialHealth)
@@ -34,5 +41,28 @@ public class PlayerValues : MonoBehaviour
         this.maxHealth = maxHealth;
         this.currentFuel = initialFuel;
         this.currentHealth = initialHealth;
+    }
+
+    public GameObject ClosestBody()
+    {
+        return gravityManager.closestBody;
+    }
+
+    private void FixedUpdate()
+    {
+        velocity = rigidBody.velocity;
+        sqrSpeed = velocity.sqrMagnitude;
+        speed = Mathf.Sqrt(sqrSpeed);
+    }
+
+    private void Update()
+    {
+        currentFuel -= (1 - currentHealth / maxHealth) * Time.deltaTime;
+    }
+
+    public void Damage(float damage)
+    {
+        if(currentFuel > 0) currentHealth -= damageMultiplier * damage;
+        else currentHealth = 0;
     }
 }

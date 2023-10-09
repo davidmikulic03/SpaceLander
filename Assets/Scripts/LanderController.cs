@@ -91,17 +91,12 @@ public class LanderController : MonoBehaviour
             {
                 Vector3 globalImpulse = Vector3.zero;
 
-                //Quaternion alignForward = Quaternion.FromToRotation(cameraObject.transform.up, transform.up);
-                //Quaternion alignRight = Quaternion.FromToRotation(cameraPlaneNormal, transform.forward);
-
                 Vector3 forwardAxle = Vector3.ProjectOnPlane(-cameraObject.transform.forward, transform.up).normalized;
-                forwardAxle.Normalize();
-                globalImpulse += forwardAxle * rotationInput.x;
-
-                Vector3 rightAxle = cameraObject.transform.right;
-                globalImpulse += rightAxle * rotationInput.y;
-
+                Vector3 rightAxle = Vector3.ProjectOnPlane(cameraObject.transform.right, transform.up).normalized;
                 Vector3 upAxle = transform.up;
+
+                globalImpulse += forwardAxle * rotationInput.x;
+                globalImpulse += rightAxle * rotationInput.y;
                 globalImpulse += upAxle * rotationInput.z;
                 
                 globalImpulse *= rotationStrength * 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerParent : MonoBehaviour
 {
-    [SerializeField] private GameObject landerObject;
+    public GameObject landerObject;
     [SerializeField] private GameObject cameraObject;
     [HideInInspector] public PlayerValues playerValues;
 

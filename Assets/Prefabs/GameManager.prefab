@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4578008528159369919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7138158953306846825}
+  - component: {fileID: 7543307805000226038}
+  m_Layer: 3
+  m_Name: PostProcessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7138158953306846825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578008528159369919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 913442761004827704}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7543307805000226038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578008528159369919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: fea914f0504cc7d448c8e7e0d81c8af2, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &6864129752597895608
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +60,7 @@ GameObject:
   - component: {fileID: 913442761004827704}
   - component: {fileID: 3574236866028332716}
   - component: {fileID: 1144166370156530581}
-  - component: {fileID: 2564815102294296322}
+  - component: {fileID: 8397563732791150670}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -34,6 +83,7 @@ Transform:
   m_Children:
   - {fileID: 1504495660542052825}
   - {fileID: 3260023519788691731}
+  - {fileID: 7138158953306846825}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3574236866028332716
@@ -49,8 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 3260023519788691731}
-  sceneSettings: {fileID: 0}
+  sceneSettings: {fileID: 8397563732791150670}
   isRunning: 0
+  sceneIndex: 1
+  playerValues: {fileID: 0}
 --- !u!114 &1144166370156530581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +133,7 @@ MonoBehaviour:
   m_DefaultActionMap: PauseInput
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2564815102294296322
+--- !u!114 &8397563732791150670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,13 +145,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ba74425148dc149aacc8e839bcfe21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelBurnRate: 0
+  fuelBurnRate: 5
   maxFuel: 100
   maxHealth: 100
   initialFuel: 100
   initialHealth: 100
-  thrustStrength: 40
-  rotationStrength: 15
+  thrustStrength: 25
+  rotationStrength: 5
+  stabilization: 1
 --- !u!1 &7342175836491795290
 GameObject:
   m_ObjectHideFlags: 0

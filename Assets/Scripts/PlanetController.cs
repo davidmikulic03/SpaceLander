@@ -14,15 +14,12 @@ public class PlanetController : MonoBehaviour
 
         if (speed > 10)
         {
-            Debug.Log("Ouch!");
-            //StartCoroutine(HitFrames());
-        }
-    }
+            PlayerValues playerValues = collision.gameObject.GetComponent<PlayerValues>();
 
-    IEnumerator HitFrames()
-    {
-        Time.timeScale = 0.1f;
-        yield return new WaitForSeconds(0.1f);
-        Time.timeScale = 1f;
+            if(playerValues != null)
+            {
+                playerValues.Damage(speed);
+            }
+        }
     }
 }

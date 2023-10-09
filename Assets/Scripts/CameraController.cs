@@ -31,6 +31,14 @@ public class CameraController : MonoBehaviour
         Cursor.visible = true;
         gravityManager = lander.GetComponent<GravityManager>();
         landerController = lander.GetComponent<LanderController>();
+
+        LoadSettings();
+    }
+
+    void LoadSettings()
+    {
+        panSpeed = PlayerPrefs.GetFloat("Camera Sensitivity");
+        scrollSpeed = PlayerPrefs.GetFloat("Scroll Sensitivity");
     }
     
     void FixedUpdate()
