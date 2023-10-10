@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2522206165113397280}
   - component: {fileID: 1023316611626616843}
   - component: {fileID: 2106422077254735480}
+  - component: {fileID: 7774209266426250548}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Gravitational Body
@@ -168,5 +169,22 @@ MonoBehaviour:
   prefab: {fileID: 7405432461589955242, guid: b52060ba46c61754cafed9e98e09072c, type: 3}
   initialRotation: {x: -90, y: 0, z: 0}
   facingTarget: {fileID: 0}
-  number: 10
+  number: 11
   height: 5
+--- !u!114 &7774209266426250548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5208268279495801614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630c80f147696c243bd7189328fd4891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7405432461589955242, guid: ea300093b8d45c84cb8aa5bdf5a23740, type: 3}
+  initialRotation: {x: -90, y: 0, z: 0}
+  facingTarget: {fileID: 0}
+  number: 9
+  height: 10

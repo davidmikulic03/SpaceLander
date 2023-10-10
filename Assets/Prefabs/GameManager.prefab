@@ -151,7 +151,7 @@ MonoBehaviour:
   initialFuel: 100
   initialHealth: 100
   thrustStrength: 25
-  rotationStrength: 5
+  rotationStrength: 10
   stabilization: 1
 --- !u!1 &7342175836491795290
 GameObject:

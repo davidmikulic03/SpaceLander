@@ -16,22 +16,22 @@ MonoBehaviour:
   - sceneName: Sandbox
     description: 'This is the first, and also easiest, level. Well... It''s less
       of a level and more of a sandbox to familiarize yourself with the controls.
-      The engine is infinitely efficient here, so you don''t have to worry about
-      your fuel. Have fun, and don''t forget to reset if you accidentally slingshot
-      yourself out of the system (happens easily if you''re not careful).
+      The engine is incredibly efficient here, so you don''t really have to worry
+      about your fuel. There are also fuel packages and repair packages scattered
+      about if you need them.
 
 '
   - sceneName: Loopy Luke
     description: "This level acquaints the player with the win condition; getting
       sweet points. The way you get points is by passing through Hoops\u2122, big,
       red, rotating loops. They're hard to miss, really.\n\nAlong with hoops, this
-      level introduces collectible fuel packages. They are, likewise, quite hard
-      to miss. They're green, though."
+      level introduces collectible fuel packages, and repair packages. Losing Health
+      makes you passively lose fuel."
   - sceneName: Tumbling Thomas
     description: "\"What? You can't do your job unless we're supplying you with fuel?
       Figure it out, bucko.\" \n\nBudget cuts from corporate are hitting hard."
   - sceneName: Faraway Fortune
-    description: Is it a bird? Is it a plane? No! It's a lovecraftian abomination!
+    description: "Is it a bird? Is it a plane? No! It's a lovecraftian abomination!
       Corporate are calling it The Entity. They're currently trying to trademark
-      it, but they need you to get close and see what happens. You could just collect
-      hoops as usual but that weird pulsating mass invites investigation.
+      it, but they need you to get close and see what happens. \n\nYou could just
+      collect hoops as usual but that weird pulsating mass invites investigation."

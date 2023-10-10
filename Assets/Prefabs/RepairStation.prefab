@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 6235867374242174290}
   - component: {fileID: 3095763676965314270}
   - component: {fileID: 7855439660006638010}
-  - component: {fileID: 6955858877219181809}
   - component: {fileID: 7158982923774705175}
+  - component: {fileID: 5485185757650895575}
   m_Layer: 0
-  m_Name: RefuelStation
+  m_Name: RepairStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7405432461589955242}
-  m_Mesh: {fileID: 5514206467825403805, guid: 1a0e76ad4e058da4a8df9a39608bdb5d, type: 3}
+  m_Mesh: {fileID: 7532580094648684827, guid: 57df55b2acf2d1045ba5a8e994545945, type: 3}
 --- !u!23 &3095763676965314270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ec3c8f7fede671478c76e0af20cc258, type: 2}
+  - {fileID: 2100000, guid: bb086ac67e09b5e438a147e056b3cade, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,21 +105,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.5, z: 1.5}
+  m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6955858877219181809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7405432461589955242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b40c1082f8b6a740a36bc0e1920a083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuel: 20
 --- !u!114 &7158982923774705175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,3 +123,16 @@ MonoBehaviour:
   deathTime: 2
   scaleFactor: 1
   rotFactor: 1
+--- !u!114 &5485185757650895575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7405432461589955242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3028654c6a253a4e9b59e0e6783f267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  repairAmount: 50

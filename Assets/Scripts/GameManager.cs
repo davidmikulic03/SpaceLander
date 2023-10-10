@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.Windows;
-using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -117,8 +113,10 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
-        if (buildIndex + 1 < SceneManager.sceneCount)
+
+        if (buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
+            
             SceneManager.LoadScene(buildIndex + 1);
         }
     }
