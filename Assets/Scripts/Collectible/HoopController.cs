@@ -14,15 +14,9 @@ public class HoopController : MonoBehaviour
             PlayerValues playerValues = hitObject.GetComponent<PlayerValues>();
             playerValues.score += points;
             isActive = false;
-            StartCoroutine(KillHoop());
-        }
-    }
 
-    IEnumerator KillHoop()
-    {
-        TargetAnim anim = GetComponent<TargetAnim>();
-        StartCoroutine(anim.DeathAnim());
-        yield return new WaitForSeconds(anim.deathTime);
-        Destroy(this.gameObject);
+            TargetAnim anim = GetComponent<TargetAnim>();
+            StartCoroutine(anim.DeathAnim());
+        }
     }
 }

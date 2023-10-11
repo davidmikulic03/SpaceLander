@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e862a0b87745a40a10e4091fa5f215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleDuration: 4
-  deathTime: 2
+  cycleDuration: 2
+  deathTime: 1
   scaleFactor: 1
   rotFactor: 1
 --- !u!114 &5485185757650895575

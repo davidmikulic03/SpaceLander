@@ -89,8 +89,12 @@ public class LanderController : MonoBehaviour
             {
                 Vector3 globalImpulse = Vector3.zero;
 
-                // These three lines use the plane defined by the landerObject's up-vector to create axes which are based on the local ones,
-                // but essentially rotated along the local y to align with the camera.
+                // These three lines use the plane defined by the landerModel's up-vector to create a space based on the local space,
+                // but essentially rotated along the local y to align with the camera. The upAxle is unchanged, because it is not
+                // changed by being rotated along its own axis.
+
+                // It looks a bit like magic, but if you consider what ProjectOnPlane does and use your hands to visualise, it is
+                // somewhat understandable.
                 Vector3 forwardAxle = Vector3.ProjectOnPlane(-cameraObject.transform.forward, transform.up).normalized;
                 Vector3 rightAxle = Vector3.ProjectOnPlane(cameraObject.transform.right, transform.up).normalized;
                 Vector3 upAxle = transform.up;
@@ -100,6 +104,7 @@ public class LanderController : MonoBehaviour
                 globalImpulse += rightAxle * rotationInput.y;
                 globalImpulse += upAxle * rotationInput.z;
                 
+                // The transformed input is transformed into a velocity to be added.
                 globalImpulse *= rotationStrength * 
                     Time.deltaTime;
 
@@ -142,6 +147,7 @@ public class LanderController : MonoBehaviour
         get { return cameraObject.transform; }
     }
 
+    // The Player Input component calls these methods to assign values to our input variables.
     private void OnRotation(InputValue value)
     {
         rotationInput = value.Get<Vector3>();

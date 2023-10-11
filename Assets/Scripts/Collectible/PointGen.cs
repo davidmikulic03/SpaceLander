@@ -31,6 +31,8 @@ public class PointGen : MonoBehaviour
         empty.transform.position = transform.position;
         empty.transform.parent = transform;
 
+
+        // This loop generates points as evenly as it can around a sphere. The generated sphere is a fibonacci sphere.
         for (int i = 0; i < number; i++)
         {
             theta = 2 * Mathf.PI / goldenRatio * i;

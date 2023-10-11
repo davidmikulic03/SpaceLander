@@ -56,7 +56,11 @@ public class PlayerValues : MonoBehaviour
             return;
         }
 
-        float evaluatedCurve = ExtendedMath.Bias(1 - currentHealth / maxHealth, fuelLeakBias);
+        float t = (1 - currentHealth / maxHealth);
+
+        // EvaluateFromBias is an extended function of my creation, enter the class for a link to a desmos project that illustrates what it does.
+
+        float evaluatedCurve = t.EvaluateFromBias(fuelLeakBias);
         float fuelLeakageRate =  maxFuel * evaluatedCurve * fuelLeakMultiplier * Time.fixedDeltaTime;
         float newFuel = currentFuel - fuelLeakageRate;
 

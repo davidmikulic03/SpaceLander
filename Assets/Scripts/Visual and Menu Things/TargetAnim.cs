@@ -39,18 +39,15 @@ public class TargetAnim : MonoBehaviour
     float t = 0;
     void PassiveRotation()
     {
-        if(Time.timeScale == 1)
-        {
             float returnTime = (1 - Mathf.Cos(2 * Mathf.PI * t)) / 2;
 
-            inverseRot = Mathf.Lerp(initialRotSpeed, initialRotSpeed * rotFactor, 1 - returnTime);
+            inverseRot = Time.timeScale * Mathf.Lerp(initialRotSpeed, initialRotSpeed * rotFactor, 1 - returnTime);
             transform.rotation = Quaternion.AngleAxis(inverseRot, transform.forward) * transform.rotation;
             transform.localScale = Vector3.Lerp(initialScale, initialScale * scaleFactor, returnTime);
 
             t += Time.deltaTime / cycleDuration;
             if (t > 1)
                 t--;
-        }
     }
 
     public IEnumerator DeathAnim()
@@ -71,9 +68,11 @@ public class TargetAnim : MonoBehaviour
                 transform.localScale = scale * Vector3.one;
                 transform.rotation = Quaternion.AngleAxis(inverseRot, transform.forward) * transform.rotation;
             }
-            else transform.localScale = Vector3.zero;
+            else
+            {
+                Destroy(this.gameObject);
+            }
             
-
             yield return null;
         }
     }

@@ -10,10 +10,9 @@ public class PlanetController : MonoBehaviour
         GameObject playerObject = collision.gameObject;
 
         Vector3 normalVector = -(playerObject.transform.position - transform.position).normalized;
-        Vector3 velocity = rb.velocity;
+        Vector3 velocity = rb.velocity + rb.angularVelocity * playerObject.transform.localScale.x;
         float dottedSpeed = Mathf.Abs(Vector3.Dot(normalVector, velocity));
-        float influence = 0.9f;
-        dottedSpeed = influence * dottedSpeed + (1 - influence) * velocity.magnitude;
+        //float influence = 0.9f;
 
         if (dottedSpeed > 2)
         {

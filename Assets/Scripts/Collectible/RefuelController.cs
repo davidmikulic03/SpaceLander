@@ -3,10 +3,11 @@ using UnityEngine;
 public class RefuelController : MonoBehaviour
 {
     [SerializeField] float fuel = 20;
+    private bool isEnabled = true;
 
     private void OnTriggerEnter(Collider trigger)
     {
-        if(trigger.name == "LanderModel")
+        if(trigger.name == "LanderModel" && isEnabled == true)
         {
             LanderController landerController = trigger.GetComponent<LanderController>();
             PlayerValues playerValues = landerController.GetComponent<PlayerValues>();
@@ -16,6 +17,7 @@ public class RefuelController : MonoBehaviour
 
             TargetAnim anim = GetComponent<TargetAnim>();
             StartCoroutine(anim.DeathAnim());
+            isEnabled = false;
         }
     }
 }

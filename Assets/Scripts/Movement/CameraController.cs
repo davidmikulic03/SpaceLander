@@ -139,6 +139,7 @@ public class CameraController : MonoBehaviour
         return newRotation;
     }
 
+    // The Player Input component calls these methods to assign values to our input variables.
     void OnLook(InputValue value)
     {
         mouseDelta = value.Get<Vector2>();
