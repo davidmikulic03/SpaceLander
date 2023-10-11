@@ -36,13 +36,13 @@
   ## Developer Instructions
    In this section, I will outline how one should go about playing the game from the Unity Editor, as well as how one should examine the project in the easiest way possible.
    ### Starting Scene
-    To start playing, open the scene MainMenu.
+   To start playing, open the scene MainMenu.
    ### Navigating the project.
-    The project is essentially built as such: There is one scene, the afforementioned MainMenu, that acts as the hub. The rest of the scenes in the Build Settings are levels. Every level is structured in the same way: There is a (1) GameManager, a light source, and a number of (2) planets.
-    1. GameManager
-     The Game Manager loads necessary resources, like the player prefab, and UI objects.
-    2. Planet
-     A planet is an object which exerts gravitational force on the player, generates hoops, and detects hard collisions to feed to the player.
+   The project is essentially built as such: There is one scene, the afforementioned MainMenu, that acts as the hub. The rest of the scenes in the Build Settings are levels. Every level is structured in the same way: There is a (1) GameManager, a light source, and a number of (2) planets.
+   1. GameManager
+    The Game Manager loads necessary resources, like the player prefab, and UI objects.
+   2. Planet
+    A planet is an object which exerts gravitational force on the player, generates hoops, and detects hard collisions to feed to the player.
     The Player prefab is one of the more important Assets in the project. Within it, we find the LanderModel, the Main Camera, and some canvas stuff.
    #### the LanderModel in the Player prefab
    The LanderModel holds the scripts LanderController, GravityManager, PlayerValues, and UIController. In order, their functions are:
